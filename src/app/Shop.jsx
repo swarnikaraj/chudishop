@@ -10,34 +10,53 @@ import {
   Factory,
   ChevronRight,
 } from "lucide-react";
-import Image from "next/image";
-import { galleryData } from "@/data/gallery-data";
 
 const categories = [
   {
     title: "Bangles Collection",
     description:
       "Fancy glass bangles, customized chudi, kangan, chuka, and premium traditional designs in glass, lakh, and metal.",
-    image: galleryData.bangles?.[0] || "/images/bangles/1.jpg",
+    image: "/images/categories/bangles.jpg",
+  },
+  {
+    title: "Glassware",
+    description:
+      "Wine glasses, champagne glasses, jars, bottles, ice containers, and premium decorative glassware.",
+    image: "/images/categories/glassware.jpg",
   },
   {
     title: "Home Decor",
     description:
       "Flower vases, candle stands, decorative lamps, chandeliers, and elegant home decoration items.",
-    image: galleryData.homeDecor?.[0] || "/images/home-decor/1.jpg",
-  },
-  {
-    title: "Shop Display",
-    description:
-      "Visit our store in Firozabad for a beautiful collection of bangles, glassware, decorative items, and custom orders.",
-    image: galleryData.shop?.[0] || "/images/shop/1.jpg",
+    image: "/images/categories/decor.jpg",
   },
 ];
 
 const productTabs = {
-  Bangles: galleryData.bangles || [],
-  "Home Decor": galleryData.homeDecor || [],
-  Shop: galleryData.shop || [],
+  Bangles: [
+    "/images/products/bangle-1.jpg",
+    "/images/products/bangle-2.jpg",
+    "/images/products/bangle-3.jpg",
+    "/images/products/bangle-4.jpg",
+    "/images/products/bangle-5.jpg",
+    "/images/products/bangle-6.jpg",
+  ],
+  Glassware: [
+    "/images/products/glass-1.jpg",
+    "/images/products/glass-2.jpg",
+    "/images/products/glass-3.jpg",
+    "/images/products/glass-4.jpg",
+    "/images/products/glass-5.jpg",
+    "/images/products/glass-6.jpg",
+  ],
+  Decor: [
+    "/images/products/decor-1.jpg",
+    "/images/products/decor-2.jpg",
+    "/images/products/decor-3.jpg",
+    "/images/products/decor-4.jpg",
+    "/images/products/decor-5.jpg",
+    "/images/products/decor-6.jpg",
+  ],
 };
 
 const highlights = [
@@ -59,7 +78,7 @@ const highlights = [
   {
     icon: Sparkles,
     title: "Wide Variety",
-    text: "From bangles to decorative glass items, we offer many styles and designs.",
+    text: "From bangles to chandeliers, we offer decorative and utility glass items in many styles.",
   },
 ];
 
@@ -82,13 +101,9 @@ function SectionHeading({ eyebrow, title, subtitle }) {
 }
 
 function HeroSection() {
-  const mainShopImage = galleryData.shop?.[0] || "/images/shop/1.jpg";
-  const sideImage1 = galleryData.bangles?.[0] || "/images/bangles/1.jpg";
-  const sideImage2 = galleryData.homeDecor?.[0] || "/images/home-decor/1.jpg";
-
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.12),transparent_30%),radial-gradient(circle_at_top_left,rgba(251,146,60,0.14),transparent_30%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(244,63,94,0.12),_transparent_30%),radial-gradient(circle_at_top_left,_rgba(251,146,60,0.14),_transparent_30%)]" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
         <div className="flex flex-col justify-center">
           <div className="w-fit rounded-full border border-rose-200 bg-white px-4 py-2 text-sm font-medium text-rose-700 shadow-sm">
@@ -98,8 +113,8 @@ function HeroSection() {
             Sneh Srinagar Emporium
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            Elegant glass bangles, decorative items, flower vases, candle
-            stands, lamps, glass jars, bottles, chandeliers, and custom-made
+            Elegant glass bangles, premium glassware, decorative items,
+            chandeliers, flower vases, lamps, bottles, jars, and custom-made
             creations for customers across India and abroad.
           </p>
 
@@ -151,30 +166,23 @@ function HeroSection() {
 
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-2 rounded-[2rem] border border-slate-200 bg-white p-3 shadow-xl">
-            <Image
-              width={1200}
-              height={900}
-              src={mainShopImage}
+            <img
+              src="/images/shop/shop-front.jpg"
               alt="Sneh Srinagar Emporium Shop"
               className="h-[320px] w-full rounded-[1.5rem] object-cover"
-              priority
             />
           </div>
           <div className="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-lg">
-            <Image
-              width={800}
-              height={800}
-              src={sideImage1}
+            <img
+              src="/images/hero/hero-1.jpg"
               alt="Glass bangles"
               className="h-52 w-full rounded-[1.5rem] object-cover"
             />
           </div>
           <div className="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-lg">
-            <Image
-              width={800}
-              height={800}
-              src={sideImage2}
-              alt="Home decor items"
+            <img
+              src="/images/hero/hero-2.jpg"
+              alt="Decorative glass items"
               className="h-52 w-full rounded-[1.5rem] object-cover"
             />
           </div>
@@ -218,7 +226,7 @@ function CategorySection() {
       <SectionHeading
         eyebrow="Our Specialties"
         title="Collections that make your shop and home stand out"
-        subtitle="A premium showcase of bangles, home decor, and your store collection."
+        subtitle="Use this section to highlight the 3 main categories that matter most to your buyers."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -227,11 +235,9 @@ function CategorySection() {
             key={item.title}
             className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
           >
-            <Image
+            <img
               src={item.image}
               alt={item.title}
-              width={800}
-              height={600}
               className="h-64 w-full object-cover"
             />
             <div className="p-6">
@@ -258,8 +264,8 @@ function ProductGalleryTabs() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Gallery"
-          title="A premium product showcase with your real photos"
-          subtitle="Your website is now using images directly from your folders instead of manual image lists."
+          title="A premium product showcase for your real photos"
+          subtitle="You have 100+ images, so this tabbed layout keeps the website clean while showing many products."
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -281,14 +287,12 @@ function ProductGalleryTabs() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {productTabs[activeTab].map((image, idx) => (
             <div
-              key={`${image}-${idx}`}
+              key={image + idx}
               className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-3 shadow-sm"
             >
-              <Image
+              <img
                 src={image}
                 alt={`${activeTab} ${idx + 1}`}
-                width={800}
-                height={1000}
                 className="h-80 w-full rounded-[1.5rem] object-cover transition duration-300 group-hover:scale-[1.03]"
               />
             </div>
@@ -385,8 +389,8 @@ function ContactSection() {
             Serve customers across India and abroad
           </h2>
           <p className="mt-5 max-w-xl text-base leading-8 text-rose-50">
-            We accept retail, wholesale, and export orders. Wholesale available.
-            Retail and wholesale for all items available.
+            We accept retail, wholesale, and export orders. This section can
+            later include a WhatsApp button, inquiry form, or map embed.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -416,7 +420,7 @@ function Footer() {
           © {new Date().getFullYear()} Sneh Srinagar Emporium. All rights
           reserved.
         </p>
-        <p>Fancy Bangles • Home Decor • Wholesale • Export</p>
+        <p>Fancy Bangles • Glassware • Home Decor • Wholesale • Export</p>
       </div>
     </footer>
   );
