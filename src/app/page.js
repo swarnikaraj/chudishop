@@ -193,7 +193,7 @@ function HighlightsSection() {
           return (
             <div
               key={item.title}
-              className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm"
+              className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50">
                 <Icon className="h-6 w-6 text-rose-600" />
@@ -225,7 +225,7 @@ function CategorySection() {
         {categories.map((item) => (
           <div
             key={item.title}
-            className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
+            className="overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm"
           >
             <Image
               src={item.image}
@@ -282,14 +282,14 @@ function ProductGalleryTabs() {
           {productTabs[activeTab].map((image, idx) => (
             <div
               key={`${image}-${idx}`}
-              className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-3 shadow-sm"
+              className="group overflow-hidden rounded-4xl border border-slate-200 bg-white p-3 shadow-sm"
             >
               <Image
                 src={image}
                 alt={`${activeTab} ${idx + 1}`}
                 width={800}
                 height={1000}
-                className="h-80 w-full rounded-[1.5rem] object-cover transition duration-300 group-hover:scale-[1.03]"
+                className="h-80 w-full rounded-3xl object-cover transition duration-300 group-hover:scale-[1.03]"
               />
             </div>
           ))}
@@ -303,18 +303,18 @@ function CustomOrderSection() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 rounded-[2rem] bg-slate-900 px-6 py-10 text-white shadow-2xl sm:px-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div className="grid gap-8 rounded-4xl bg-slate-900 px-6 py-10 text-white shadow-2xl sm:px-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-rose-300">
               Custom Manufacturing
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Factory me customised bhi karwa sakte hain
+              Custom-made products crafted to your requirements
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300">
-              Jis type ka kuch bhi glass ka bana hua saman chahiye, uske custom
-              orders liye jaate hain. Customized chudi, kangan, aur chuka bhi
-              banti hain. Materials available: glass, lah, and metal.
+              We take custom orders for many types of glass products based on
+              your design and business needs. Customized chudi, kangan, and
+              chuka are also available in glass, lakh, and metal materials.
             </p>
           </div>
 
@@ -338,7 +338,7 @@ function ContactSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+        <div className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900">
             Contact & Orders
           </h2>
@@ -380,7 +380,7 @@ function ContactSection() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] bg-gradient-to-br from-rose-600 to-orange-500 p-8 text-white shadow-xl">
+        <div className="rounded-4xl bg-linear-to-br from-rose-600 to-orange-500 p-8 text-white shadow-xl">
           <h2 className="text-3xl font-bold tracking-tight">
             Serve customers across India and abroad
           </h2>
