@@ -150,32 +150,32 @@ function HeroSection() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="col-span-2 rounded-[2rem] border border-slate-200 bg-white p-3 shadow-xl">
+          <div className="col-span-2 rounded-4xl border border-slate-200 bg-white p-3 shadow-xl">
             <Image
               width={1200}
               height={900}
               src={mainShopImage}
               alt="Sneh Srinagar Emporium Shop"
-              className="h-[320px] w-full rounded-[1.5rem] object-cover"
+              className="h-[320px] w-full rounded-3xl object-cover"
               priority
             />
           </div>
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-lg">
+          <div className="rounded-4xl border border-slate-200 bg-white p-3 shadow-lg">
             <Image
               width={800}
               height={800}
               src={sideImage1}
               alt="Glass bangles"
-              className="h-52 w-full rounded-[1.5rem] object-cover"
+              className="h-52 w-full rounded-3xl object-cover"
             />
           </div>
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-lg">
+          <div className="rounded-4xl border border-slate-200 bg-white p-3 shadow-lg">
             <Image
               width={800}
               height={800}
               src={sideImage2}
               alt="Home decor items"
-              className="h-52 w-full rounded-[1.5rem] object-cover"
+              className="h-52 w-full rounded-4xl object-cover"
             />
           </div>
         </div>
